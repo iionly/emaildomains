@@ -1,0 +1,24 @@
+{
+    "name": "iionly/emaildomains",
+    "description": "Limit new user signon to those with email addresses of specified domains.",
+    "type": "elgg-plugin",
+    "keywords": [
+        "elgg",
+        "plugin"
+    ],
+    "homepage": "https://github.com/iionly/emaildomains",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "iionly",
+            "homepage": "https://github.com/iionly",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+            "issues": "https://github.com/iionly/emaildomains/issues"
+    },
+    "require": {
+        "composer/installers": ">=1.0.8"
+    }
+}
