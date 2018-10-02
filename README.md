@@ -1,8 +1,8 @@
-Emaildomains for Elgg 1.9 - 1.12 and Elgg 2.X
-=============================================
+Emaildomains for Elgg 2.3 and newer Elgg 2.X
+============================================
 
-Latest Version: 1.9.1  
-Released: 2015-09-20  
+Latest Version: 2.3.2  
+Released: 2018-08-12  
 Contact: iionly@gmx.de  
 License: GNU General Public License version 2  
 Copyright: (C) iionly 2013, (C) Curverider 2008
@@ -10,8 +10,6 @@ Copyright: (C) iionly 2013, (C) Curverider 2008
 
 Description
 -----------
-
-This plugin is a Elgg 1.9 - 1.12 and Elgg 2.X version of the Emaildomains plugin available at https://github.com/Elgg/emaildomains for Elgg 1.7.
 
 The Emaildomains plugin will allow you to limit the registration of accounts on your site to people who have an email address of specified domains. You can define one (or more) email domains you want to permit. You can also define email domains you want to deny access to your site.
 

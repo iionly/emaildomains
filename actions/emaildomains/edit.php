@@ -12,13 +12,11 @@
  * iionly@gmx.de
  */
 
-$emaildomains = sanitise_string(get_input('emaildomains'));
-$emaildomains_blocked = sanitise_string(get_input('emaildomains_blocked'));
+$emaildomains = sanitize_string(get_input('emaildomains', ''));
+$emaildomains_blocked = sanitize_string(get_input('emaildomains_blocked', ''));
 
 $site = elgg_get_config('site');
 $site->emaildomains = $emaildomains;
 $site->emaildomains_blocked = $emaildomains_blocked;
 
-system_message(elgg_echo('emaildomains:save:success'));
-
-forward(REFERER);
+return elgg_ok_response('', elgg_echo('emaildomains:save:success'), REFERER);

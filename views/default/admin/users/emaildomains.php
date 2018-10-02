@@ -12,23 +12,11 @@
  * iionly@gmx.de
  */
 
-$site = elgg_get_config('site');
+echo elgg_autop(elgg_echo('emaildomains:description'));
 
-$emaildomains = $site->emaildomains;
-$emaildomains_blocked = $site->emaildomains_blocked;
+$form_vars = [
+	'action' => 'action/emaildomains/edit',
+	'class' => 'elgg-form-settings',
+];
 
-echo "<p class='margin_top'>".elgg_echo('emaildomains:description')."</p>";
-
-$b1desc = elgg_echo('emaildomains:allow');
-$b2desc = elgg_echo('emaildomains:deny');
-
-$box = elgg_view('input/text', array('value' => $emaildomains, 'name' => 'emaildomains'));
-$box2 = elgg_view('input/text', array('value' => $emaildomains_blocked, 'name' => 'emaildomains_blocked'));
-$button = elgg_view('input/submit', array('value' => elgg_echo('save')));
-
-$form_body = <<< END
-    <p><label>$b1desc $box</label></p>
-    <p><label>$b2desc $box2</label></p> 
-    $button
-END;
-echo elgg_view('input/form', array('body' => $form_body, 'action' => elgg_get_site_url() . "action/emaildomains/edit"));
+echo elgg_view_form('admin/users/emaildomains', $form_vars);

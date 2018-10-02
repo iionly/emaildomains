@@ -12,21 +12,20 @@
  * iionly@gmx.de
  */
 
-elgg_register_event_handler('init','system','emaildomains_init');
+elgg_register_event_handler('init', 'system', 'emaildomains_init');
 
 /**
  * Initialise the emaildomains tool
  *
  */
-function emaildomains_init(){
+function emaildomains_init() {
 
-	// Register some actions
-	elgg_register_action("emaildomains/edit", elgg_get_plugins_path() . "emaildomains/actions/edit.php", "admin");
+	elgg_register_admin_menu_item('administer', 'emaildomains', 'users');
 
 	// Register a hook to validate email for new users
 	elgg_register_plugin_hook_handler('registeruser:validate:email', 'all', 'emaildomains_validate_email', 999);
 
-	elgg_register_admin_menu_item('administer', 'emaildomains', 'users');
+	elgg_register_action("emaildomains/edit", dirname(__FILE__) . "/actions/emaildomains/edit.php", "admin");
 }
 
 
@@ -38,7 +37,7 @@ function emaildomains_init(){
  * @param unknown_type $returnvalue
  * @param unknown_type $params
  */
-function emaildomains_validate_email($hook, $entity_type, $returnvalue, $params){
+function emaildomains_validate_email($hook, $entity_type, $returnvalue, $params) {
 
 	$site = elgg_get_config('site');
 	$email = $params['email'];
@@ -49,7 +48,7 @@ function emaildomains_validate_email($hook, $entity_type, $returnvalue, $params)
 
 			$domains_blocked = explode(',', $site->emaildomains_blocked);
 
-			foreach ($domains_blocked as $domain) {
+			foreach($domains_blocked as $domain) {
 				$domain = trim($domain);
 
 				if (stripos($email, $domain) !== false) {
@@ -63,7 +62,7 @@ function emaildomains_validate_email($hook, $entity_type, $returnvalue, $params)
 
 			$domains = explode(',', $site->emaildomains);
 
-			foreach ($domains as $domain) {
+			foreach($domains as $domain) {
 				$domain = trim($domain);
 
 				if (stripos($email, $domain) !== false) {

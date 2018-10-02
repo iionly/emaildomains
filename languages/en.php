@@ -12,13 +12,16 @@
  * iionly@gmx.de
  */
 
-return array(
+return [
 	'admin:users:emaildomains' => 'Emaildomains',
-	'emaildomains:description' => 'If you like, you can only let people with certain email addresses register for your site. For example, you could restrict the site to users with email addresses from yourcompany.com. To do this, enter the email domain (the part after the \'@\') below. To use more than one, separate them with commas.',
+	'emaildomains:description' => 'If you like, you can only let people with certain email addresses register for your site ("Allow only" = Whitelist). For example, you could restrict the site to users with email addresses from yourcompany.com.
+
+	Or you could deny the creation of accounts if certain email addresses are provided on registration ("Deny from" = Blacklist). For example, spammers might create accounts again and again with email addresses from a certain domain. By adding this email domain to the Blacklist you can stop them already on account creation.
+	
+	To create a Whitelist or Blacklist, enter the email domain (the part after the \'@\') in the corresponding input field below. To use more than one, separate them with commas.',
 
 	'emaildomains:allow' => 'Allow only',
 	'emaildomains:deny' => 'Deny from',
 
-	'emaildomains:save:failed' => 'Could not save your email domains.',
-	'emaildomains:save:success' => 'Email domains saved.'
-);
+	'emaildomains:save:success' => 'Email domains saved.',
+];

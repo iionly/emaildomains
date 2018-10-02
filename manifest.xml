@@ -3,14 +3,14 @@
 	<name>Emaildomains</name>
 	<id>emaildomains</id>
 	<author>iionly (for Elgg 1.8 and newer) / Curverider ltd</author>
-	<version>1.9.1</version>
+	<version>2.3.3</version>
 	<category>admin</category>
-	<description>Limit new user signon to those with email addresses of specified domains.</description>
+	<description>Limit new user signon to those with email addresses of specified domains or block user signons with email addresses of certain domains.</description>
 	<website>https://github.com/iionly</website>
 	<copyright>(C) iionly 2013, (C) Curverider 2008</copyright>
 	<license>GNU Public License version 2</license>
 	<requires>
 		<type>elgg_release</type>
-		<version>1.9</version>
+		<version>2.3.0</version>
 	</requires>
 </plugin_manifest>
