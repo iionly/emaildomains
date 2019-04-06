@@ -20,29 +20,31 @@ elgg_register_event_handler('init', 'system', 'emaildomains_init');
  */
 function emaildomains_init() {
 
-	elgg_register_admin_menu_item('administer', 'emaildomains', 'users');
+	elgg_register_menu_item('page', [
+		'name' => 'users:emaildomains',
+		'href' => 'admin/users/emaildomains',
+		'text' => elgg_echo('admin:users:emaildomains'),
+		'context' => 'admin',
+		'parent_name' => 'users',
+		'section' => 'administer'
+	]);
 
 	// Register a hook to validate email for new users
 	elgg_register_plugin_hook_handler('registeruser:validate:email', 'all', 'emaildomains_validate_email', 999);
-
-	elgg_register_action("emaildomains/edit", dirname(__FILE__) . "/actions/emaildomains/edit.php", "admin");
 }
 
 
 /**
  * Validate email address against email domains.
  *
- * @param unknown_type $hook
- * @param unknown_type $entity_type
- * @param unknown_type $returnvalue
- * @param unknown_type $params
+ * @param \Elgg\Hook $hook Hook
+ * @return bool
  */
-function emaildomains_validate_email($hook, $entity_type, $returnvalue, $params) {
-
+function emaildomains_validate_email(\Elgg\Hook $hook) {
 	$site = elgg_get_config('site');
-	$email = $params['email'];
+	$email = $hook->getParam('email', false);
 
-	if (($site) && (($site->emaildomains) || ($site->emaildomains_blocked))) {
+	if (($site) && $email && (($site->emaildomains) || ($site->emaildomains_blocked))) {
 		// Check whether an address is banned
 		if ($site->emaildomains_blocked) {
 
@@ -80,4 +82,6 @@ function emaildomains_validate_email($hook, $entity_type, $returnvalue, $params)
 
 		return false;
 	}
+
+	return $hook->getValue();
 }
