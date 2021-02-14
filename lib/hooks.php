@@ -12,28 +12,6 @@
  * iionly@gmx.de
  */
 
-elgg_register_event_handler('init', 'system', 'emaildomains_init');
-
-/**
- * Initialise the emaildomains tool
- *
- */
-function emaildomains_init() {
-
-	elgg_register_menu_item('page', [
-		'name' => 'users:emaildomains',
-		'href' => 'admin/users/emaildomains',
-		'text' => elgg_echo('admin:users:emaildomains'),
-		'context' => 'admin',
-		'parent_name' => 'users',
-		'section' => 'administer'
-	]);
-
-	// Register a hook to validate email for new users
-	elgg_register_plugin_hook_handler('registeruser:validate:email', 'all', 'emaildomains_validate_email', 999);
-}
-
-
 /**
  * Validate email address against email domains.
  *
