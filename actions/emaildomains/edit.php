@@ -12,8 +12,8 @@
  * iionly@gmx.de
  */
 
-$emaildomains = sanitize_string(get_input('emaildomains', ''));
-$emaildomains_blocked = sanitize_string(get_input('emaildomains_blocked', ''));
+$emaildomains = filter_var(get_input('emaildomains', ''), FILTER_SANITIZE_STRING);
+$emaildomains_blocked = filter_var(get_input('emaildomains_blocked', ''), FILTER_SANITIZE_STRING);
 
 $site = elgg_get_config('site');
 $site->emaildomains = $emaildomains;
