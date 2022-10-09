@@ -1,6 +1,6 @@
 <?php
 
-$site = elgg_get_config('site');
+$site = elgg_get_site_entity();
 $emaildomains = $site->emaildomains;
 $emaildomains_blocked = $site->emaildomains_blocked;
 

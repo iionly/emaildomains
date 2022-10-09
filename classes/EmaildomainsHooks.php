@@ -42,7 +42,7 @@ class EmaildomainsHooks {
 	* @return bool
 	*/
 	function emaildomains_validate_email(\Elgg\Hook $hook) {
-		$site = elgg_get_config('site');
+		$site = elgg_get_site_entity();
 		$email = $hook->getParam('email', false);
 
 		if (($site) && $email && (($site->emaildomains) || ($site->emaildomains_blocked))) {

@@ -15,7 +15,7 @@
 $emaildomains = filter_var(get_input('emaildomains', ''), FILTER_SANITIZE_STRING);
 $emaildomains_blocked = filter_var(get_input('emaildomains_blocked', ''), FILTER_SANITIZE_STRING);
 
-$site = elgg_get_config('site');
+$site = elgg_get_site_entity();
 $site->emaildomains = $emaildomains;
 $site->emaildomains_blocked = $emaildomains_blocked;
 

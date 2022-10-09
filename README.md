@@ -1,8 +1,8 @@
-Emaildomains for Elgg 4.0 and newer Elgg 4.X
+Emaildomains for Elgg 4.3 and newer Elgg 4.X
 ============================================
 
-Latest Version: 4.0.0  
-Released: 2022-05-17  
+Latest Version: 4.3.0  
+Released: 2022-10-08  
 Contact: iionly@gmx.de  
 License: GNU General Public License version 2  
 Copyright: (C) iionly 2013, (C) Curverider 2008
